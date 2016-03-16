@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node src/server.js",
+    "lint": "eslint . --ext .js,.jsx"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +32,9 @@
     "eslint-config-airbnb": "6.1.0",
     "eslint-plugin-babel": "3.1.0",
     "eslint-plugin-react": "4.2.3",
+    "redux-devtools": "3.1.1",
+    "redux-devtools-dock-monitor": "1.1.0",
+    "redux-devtools-log-monitor": "1.0.5",
     "webpack-dev-middleware": "1.5.1",
     "webpack-hot-middleware": "2.10.0"
   }

@@ -9,7 +9,7 @@ var config = {
     ],
 
     vendor: [
-      'react', 'react-dom', 'redux', 'react-redux',
+      'react', 'react-dom',
     ],
   },
 
