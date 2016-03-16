@@ -1,42 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, compose } from 'redux';
+import { createStore, compose, combineReducers } from 'redux';
 import { persistState } from 'redux-devtools';
+import { Provider } from 'react-redux';
+import { reducer as formReducer } from 'redux-form';
 
-import CustomComponent from './Component';
+import SimpleForm from './Component';
 
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter;
-    default:
-      return state;
-  }
+const reducers = {
+  form: formReducer,
 };
 
-function testAction(text) {
-  return {
-    type: 'TEST_ACTION',
-    text
-  };
-}
-
+const reducer = combineReducers(reducers);
 
 const enhancer = compose(
   persistState(window.location.href.match(/[?&]debug_session=([^&]+)\b/)),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
-let store = createStore(visibilityFilter, {}, enhancer);
+const store = createStore(reducer, {}, enhancer);
 
 const render = () => {
-  ReactDOM.render(
-    <CustomComponent />,
+  ReactDOM.render(<Provider store={store}>
+      <SimpleForm /></Provider>,
     document.getElementById('app')
   );
 };
 
 store.subscribe(render);
 render();
-
-store.dispatch(testAction('test'));
