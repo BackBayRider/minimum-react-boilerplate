@@ -4,8 +4,10 @@ import { createStore, compose, combineReducers } from 'redux';
 import { persistState } from 'redux-devtools';
 import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form';
+import { StyleRoot } from 'radium';
 
 import SimpleForm from './Component';
+import RadiumTest from './RadiumTest';
 
 const reducers = {
   form: formReducer,
@@ -21,8 +23,10 @@ const enhancer = compose(
 const store = createStore(reducer, {}, enhancer);
 
 const render = () => {
-  ReactDOM.render(<Provider store={store}>
-      <SimpleForm /></Provider>,
+  ReactDOM.render(<StyleRoot>
+      <Provider store={store}>
+        <RadiumTest /></Provider>
+    </StyleRoot>,
     document.getElementById('app')
   );
 };
