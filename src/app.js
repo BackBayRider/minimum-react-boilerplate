@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form';
 import { StyleRoot } from 'radium';
 
-import SimpleForm from './Component';
+import Component2 from './Component2';
 import RadiumTest from './RadiumTest';
 
 const reducers = {
@@ -25,7 +25,7 @@ const store = createStore(reducer, {}, enhancer);
 const render = () => {
   ReactDOM.render(<StyleRoot>
       <Provider store={store}>
-        <RadiumTest /></Provider>
+        <Component2 /></Provider>
     </StyleRoot>,
     document.getElementById('app')
   );
