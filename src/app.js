@@ -5,7 +5,7 @@ import { persistState } from 'redux-devtools';
 import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form';
 
-import SimpleForm from './Component';
+import SimpleForm from './client/Component';
 
 const reducers = {
   form: formReducer,

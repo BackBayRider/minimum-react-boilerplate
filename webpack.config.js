@@ -21,7 +21,6 @@ var config = {
     path: path.join(__dirname, staticPath),
   },
   module: {
-
     loaders: [
       {
         test: /\.(jsx|js)$/,
