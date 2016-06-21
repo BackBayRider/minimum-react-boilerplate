@@ -1,11 +1,12 @@
 import React, { PropTypes } from 'react'
 import Menu from './Menu'
+import { Grid } from 'react-bootstrap'
 
 const App = props => (
-  <div>I am App!
+  <Grid>I am App!
     <Menu />
     {props.children}
-  </div>
+  </Grid>
 )
 
 App.propTypes = {
